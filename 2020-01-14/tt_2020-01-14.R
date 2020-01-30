@@ -10,7 +10,6 @@
 library(tidytuesdayR)
 library(tidyverse)
 library(cowplot)
-library(ggtext)
 tuesdata <- tidytuesdayR::tt_load(2020, week = 3)
 passwords <- tuesdata$passwords
 
@@ -97,7 +96,7 @@ plot2 <- ggplot(alphanumeric) +
         plot.background = element_rect(fill = "black", color = "black"),
         panel.background = element_rect(fill = "black"),
         plot.title = element_text(size = 16),
-        axis.text = element_text(color = "white", size = 12), 
+        axis.text = element_text(color = "white", size = 10), 
         axis.line = element_line(color = "white"),
         axis.ticks = element_line(color = "white"),
         plot.margin = margin(t = 0.5,b = 0.5,l = 0.5,r = 0.5, unit = "cm")) + 
@@ -277,5 +276,5 @@ caption <- ggdraw() +
 
 plot_grid(title, row1, row2, row3, caption, ncol = 1, rel_heights = c(0.07, 0.29, 0.29, 0.29, 0.04))
 
-ggsave(filename = "~/Desktop/Tidy Tuesday 2020/(3) 2020-01-14/Passwords.pdf", 
+ggsave(filename = "~/Desktop/Tidy Tuesday 2020/(3) 2020-01-14/Passwords.png", 
       width = 14, height = 14)
